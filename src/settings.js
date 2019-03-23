@@ -1,0 +1,1 @@
+export const url = 'https://api.myjson.com/bins/8ro0i';
