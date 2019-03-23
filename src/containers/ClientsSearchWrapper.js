@@ -10,5 +10,7 @@ const ClientsSearchWrapper = ({onClientsSearch}) => {
   );
 }
 
-
+ClientsSearchWrapper.propTypes = {
+  onClientsSearch: PropTypes.func.isRequired,
+};
 export default ClientsSearchWrapper;

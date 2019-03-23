@@ -7,8 +7,6 @@ const getClients = () => (
   axios.get()
 );
 
-
 export default {
   getClients
 };
-

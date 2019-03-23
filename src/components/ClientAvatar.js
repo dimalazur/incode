@@ -10,6 +10,9 @@ const ClientAvatar = ({src, size}) => {
   	);
 }
 
-
+ClientAvatar.propTypes = {
+  src: PropTypes.string.isRequired,
+  size: PropTypes.string,
+};
 
 export default ClientAvatar;

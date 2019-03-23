@@ -29,5 +29,8 @@ class ClientsSearch extends Component {
   }
 }
 
+ClientsSearch.propTypes = {
+  onClientsSearch: PropTypes.func.isRequired,
+};
 
 export default ClientsSearch;

@@ -17,6 +17,40 @@ const ClientsListWrapper = ({ clientList, clientSelectId, onClientsSetEditableCl
   );
 }
 
+ClientsListWrapper.propTypes = {
+  onClientsSetEditableClient: PropTypes.func,
+  clientSelectId: PropTypes.oneOfType([
+    PropTypes.shape,
+    PropTypes.string,
+  ]),
+  searchTerm: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.shape),
+    PropTypes.shape,
+  ]),
+  clientList: PropTypes.arrayOf(PropTypes.shape({
+      address: PropTypes.shape({
+        street: PropTypes.string,
+        city: PropTypes.string,
+        zipCode: PropTypes.string,
+        country: PropTypes.string
+      }),
+      contact: PropTypes.shape({
+        email: PropTypes.string,
+        phone: PropTypes.string
+      }),
+      general: PropTypes.shape({
+        avatar: PropTypes.string,
+        firstName: PropTypes.string,
+        lastName: PropTypes.string
+      }),
+      job: PropTypes.shape({
+        company: PropTypes.string,
+        title: PropTypes.string
+      }),
+      id: PropTypes.string
+
+  })).isRequired
+};
 
 
 export default ClientsListWrapper;
