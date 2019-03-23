@@ -1,33 +1,105 @@
-.App {
-  text-align: center;
+/*----------  Eric Meyer's CSS Reset  ----------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*  font: inherit; */
+  vertical-align: baseline;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/*----------  HTML5 display-role reset for older browsers  ----------*/
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, main, nav, section {
+  display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  line-height: 1;
 }
 
-.App-link {
-  color: #61dafb;
+html {
+  /* overflow-x: hidden !important; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body, * {
+  -webkit-font-smoothing: antialiased;
+}
+
+select, option {
+  -webkit-appearance: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, p{margin:0;}
+/*----------  End of Eric Meyer's CSS Reset   ----------*/
+
+
+
+*{box-sizing: border-box;}
+body {background-color: #abb5d2;}
+
+.clients-main {margin-top: 50px; margin-bottom: 50px; background-color: #ffffff;box-shadow: 0 0 10px rgba(98, 100, 105, 0.7); border: 2px solid #5c6a77;}
+.clients-main .clients-sidebar {border-right: 2px solid #5c6a77;}
+
+
+/* custom scroll */
+.clients-list::-webkit-scrollbar {width: 8px;}
+.clients-list::-webkit-scrollbar-thumb {background: #444;border-radius: 12px;}
+.clients-list::-webkit-scrollbar-track {background: #ddd;border-radius: 12px;}
+/* custom scroll */
+
+.clients-list {max-height: 550px;overflow-x: hidden;overflow-y: auto;padding-top: 10px;}
+.clients-list.items > .clients-list-item.item {margin: 0;background-color: #fff;border-bottom: 2px solid #dedede;padding:13px;cursor: pointer;-webkit-transition: background-color .4s ease;-o-transition: background-color .4s ease;-moz-transition: background-color .4s ease;transition: background-color .4s ease;}
+.clients-list.items > .clients-list-item.item:hover {background-color: #eee;}
+.clients-list.items > .clients-list-item.item:last-child {border-bottom: 0;}
+.clients-list .clients-list-item.item .content {padding-top: 5px;}
+.clients-list .clients-list-item.client-active.item {background-color: #00bcd4;}
+.clients-list .clients-list-item.client-active.item .content .client-name,
+.clients-list .clients-list-item.client-active.item .content .client-job {color: #ffffff;}
+.clients-list .clients-list-item.client-active.item:hover {background-color: #00bcd4;}
+
+
+.clients-content {padding: 35px 0;}
+.clients-content .avatar-holder {max-width: 128px;margin: 0 auto;}
+.client-card-info {padding-right: 10px;}
+.client-card-info .info-holder {font-size: 16px;line-height: 1.25;color: #000;}
+.client-card-info .info-holder > div {margin-bottom: 10px;}
+.client-card-info .info-job {margin-bottom: 35px;}
+
+.search-holder {border-bottom: 2px solid #5c6a77;}
+.search.ui.input {width: 100%;padding: 10px;}
+#searchClient {border-width:2px;}
+
+
+@media only screen and (max-width: 991px){
+  .clients-list.items > .clients-list-item.item .header.client-name {font-size: 17px;line-height: 1.2;}
+  .clients-list.items > .clients-list-item.item .client-job {font-size: 14px;line-height: 1.2;margin-top: 4px;}
+}
+
+
+@media only screen and (max-width: 767px){
+  .clients-main {margin-top: 25px;margin-bottom: 25px;}
+  .clients-main .clients-sidebar {border-right: 0;border-bottom: 2px solid #5c6a77;}
+  .clients-list {max-height: 40vh;}
+  .clients-list.items > .clients-list-item.item {flex-direction:row;padding: 7px 14px;}
+  .clients-list.items >.clients-list-item.item > .image+.content {padding: 5px 0 0 12px;}
+  .clients-list.items >.clients-list-item.item > .image > img {max-width: 50px !important;}
+  .clients-content {padding-left: 15px;padding-right: 15px;}
+  .clients-content .avatar-holder {margin: 0 0 20px;}
+  .client-card-info .info-holder {font-size: 14px;}
 }
