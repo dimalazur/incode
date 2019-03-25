@@ -4,12 +4,12 @@ import ClientsList from '../components/ClientsList';
 
 const ClientsListWrapper = ({ clientList, clientSelectId, onClientsSetEditableClient, searchTerm }) => {
   
-  let clientsListrender = (searchTerm === null) ? clientList : searchTerm;
+  //let clientsListrender = (searchTerm === null) ? clientList : searchTerm;
 
   return (
     <div className="clients-list-holder" >
     	<ClientsList 
-        clientList={clientsListrender} 
+        clientList={clientList} 
         clientSelectId={clientSelectId} 
         onClientsSetEditableClient={onClientsSetEditableClient} 
       />
@@ -24,7 +24,7 @@ ClientsListWrapper.propTypes = {
     PropTypes.string,
   ]),
   searchTerm: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.shape),
+    PropTypes.string,
     PropTypes.shape,
   ]),
   clientList: PropTypes.arrayOf(PropTypes.shape({

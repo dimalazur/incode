@@ -9,6 +9,7 @@ import {
   GET_CLIENTS_FAILURE
 } from '../actions/actions';
 import { authApi } from '../API';
+import UUID from 'uuid';
 
 
 function* getClients(actions) {
@@ -17,8 +18,8 @@ function* getClients(actions) {
 
   try {
     const res = yield call(authApi.getClients);
-
-    yield put(success(res.data));
+    const clientsList = res.data.map((item)=>{item.id = UUID(); return item;})
+    yield put(success(clientsList));
   } catch (e) {
     yield put(failure(e));
   }

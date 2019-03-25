@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import UUID from 'uuid';
 import {
   CLIENTS_SET_EDITABLE_CLIENT,
   CLIENTS_SEARCH,
@@ -28,28 +27,16 @@ function clientsStore (state = initialState, action)  {
     case GET_CLIENTS_SUCCESS: {
       return {
         ...state,
-        clients: action.payload.map((item)=>{item.id = UUID(); return item;})
+        clients: [...action.payload]
       }
     }
-
     case CLIENTS_SEARCH: {
       return {
         ...state,
-        searchTerm: state.clients.filter((obj1) => {
-          for (const val1 in obj1) {
-            const obj2 = obj1[val1];
-            for (const val2 in obj2) {
-              if (obj2[val2].toLowerCase().includes(action.payload.toLowerCase().trim())) {
-                return true;
-              }
-            }
-          }
-          return false;
-        }),
+        searchTerm: action.payload,
       }
 
-    }
-    
+    }    
 
     default: {
       return state;

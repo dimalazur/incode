@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import { Grid, Container } from 'semantic-ui-react';
-import { connect } from 'react-redux'
-import { getClients, getSelectedClient } from './selectors';
+import { connect } from 'react-redux';
+import { getSelectedClient, getClientsListRender } from './selectors';
 
 import { getClientsRequest, clientsSetEditableClient, clientsSearch } from './actions/actions';
 import ClientsListWrapper from './containers/ClientsListWrapper';
@@ -64,7 +64,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-   clientList: getClients(state),
+   clientList: getClientsListRender(state),
    clientIsActive: state.clientsStore.clientIsActive,
    onClientsSetEditableClient: state.clientsStore.onClientsSetEditableClient,
    clientSelectId: state.clientsStore.clientSelectId,
