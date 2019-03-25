@@ -21,7 +21,6 @@ class App extends Component {
     const { 
       onClientsSetEditableClient, 
       clientList, 
-      searchTerm, 
       clientSelectId, 
       clientDetailSelect,
       onClientsSearch 
@@ -40,7 +39,6 @@ class App extends Component {
                   <ClientsListWrapper 
                     onClientsSetEditableClient={onClientsSetEditableClient}
                     clientList={clientList}
-                    searchTerm={searchTerm}
                     clientSelectId={clientSelectId}
                   />
                 </div>
@@ -69,11 +67,8 @@ const mapStateToProps = (state) => {
    onClientsSetEditableClient: state.clientsStore.onClientsSetEditableClient,
    clientSelectId: state.clientsStore.clientSelectId,
    clientDetailSelect: getSelectedClient(state),
-   searchTerm: state.clientsStore.searchTerm,
   }
 }
-
-
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -89,7 +84,6 @@ const mapDispatchToProps = (dispatch) => {
     
   }
 }
-
 
 const AppConnect = connect(
   mapStateToProps,

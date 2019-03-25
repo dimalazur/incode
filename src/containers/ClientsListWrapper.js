@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ClientsList from '../components/ClientsList';
 
-const ClientsListWrapper = ({ clientList, clientSelectId, onClientsSetEditableClient, searchTerm }) => {
+const ClientsListWrapper = ({ clientList, clientSelectId, onClientsSetEditableClient }) => {
   
-  //let clientsListrender = (searchTerm === null) ? clientList : searchTerm;
-
   return (
     <div className="clients-list-holder" >
     	<ClientsList 
@@ -22,10 +20,6 @@ ClientsListWrapper.propTypes = {
   clientSelectId: PropTypes.oneOfType([
     PropTypes.shape,
     PropTypes.string,
-  ]),
-  searchTerm: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape,
   ]),
   clientList: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.shape({
